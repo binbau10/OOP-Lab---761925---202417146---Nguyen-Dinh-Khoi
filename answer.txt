@@ -1,0 +1,3 @@
+6.1:
+- If users choose "Cancel", the message dialog will show that the users choose "No"
+- To customize the options, we should create an array of String such as {"Yes", "No"} and use JOptionPane.showOptionDialog with the array as the parameter for the buttons

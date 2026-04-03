@@ -9,8 +9,7 @@ public class Aims{
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         anOrder.addDigitalVideoDisc(dvd3);
         System.out.println("Total cost is: " + anOrder.totalCost());
-        anOrder.addDigitalVideoDisc(dvd1);
-        anOrder.addDigitalVideoDisc(dvd3);
+        anOrder.addDigitalVideoDisc(dvd1, dvd3);
         anOrder.DisplayCarts();
         anOrder.removeDigitalVideoDisc(dvd1);
         anOrder.DisplayCarts();

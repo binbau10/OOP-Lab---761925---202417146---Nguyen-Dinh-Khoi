@@ -2,3 +2,7 @@ If you create a constructor method to build a DVD by title then create a constru
 a DVD by category. Does JAVA allow you to do this?
 
 No, because both constructors have the same signature. They have the same name and their parameter is String. The name of parameters (such as title or category) is not included in a signature
+
+Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compared to an array parameter. What do you prefer in this case?
+
+I prefer the Varargs method because the number of arguments is small (The method terminates early without iterating through the Varargs if the number of arguments is greater than 20) and it does not require initializing an array.

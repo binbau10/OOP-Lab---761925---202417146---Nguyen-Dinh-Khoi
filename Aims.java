@@ -10,11 +10,11 @@ public class Aims{
         anOrder.addDigitalVideoDisc(dvd3);
         System.out.println("Total cost is: " + anOrder.totalCost());
         anOrder.addDigitalVideoDisc(dvd1, dvd3);
-        anOrder.DisplayCarts();
+        anOrder.DisplayCart();
         anOrder.removeDigitalVideoDisc(dvd1);
-        anOrder.DisplayCarts();
+        anOrder.DisplayCart();
         anOrder.addDigitalVideoDisc(dvd1);
         anOrder.removeDigitalVideoDisc(dvd3);
-        anOrder.DisplayCarts();
+        anOrder.DisplayCart();
     }
 }

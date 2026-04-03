@@ -1,10 +1,12 @@
 public class DigitalVideoDisc {
+    private static int nbDigitalVideoDiscs = 0;
     private String title;
     private String category;
     private String director;
     private int length;
     private float cost;
-    public static void main(String args[]){
+    private int id;
+    /*public static void main(String args[]){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
         swap(jungleDVD, cinderellaDVD);
@@ -16,9 +18,7 @@ public class DigitalVideoDisc {
     public void setTitle(String title){
         this.title = title;
     }
-    public String getTitle(){
-        return title;
-    }
+
     public static void swap(Object o1, Object o2){
         Object tmp = o1;
         o1 = o2;
@@ -28,6 +28,9 @@ public class DigitalVideoDisc {
         String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
         dvd = new DigitalVideoDisc(oldTitle);
+    }*/
+    public String getTitle(){
+        return title;
     }
     public String getCategory(){
         return category;
@@ -44,27 +47,21 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(String title){
         super();
         this.title = title;
+        id = nbDigitalVideoDiscs;
+        nbDigitalVideoDiscs ++;
     }
     public DigitalVideoDisc(String title, String category, float cost){
-        super();
+        this(title);
         this.category = category;
-        this.title = title;
         this.cost = cost;
     }
     public DigitalVideoDisc(String title, String category, String director, float cost){
-        super();
+        this(title, category, cost);
         this.director = director;
-        this.category = category;
-        this.title = title;
-        this.cost = cost;
     }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost){
-        super();
-        this.director = director;
-        this.category = category;
-        this.title = title;
+        this(title, category, director, cost);
         this.length = length;
-        this.cost = cost;
     }
     public boolean equals(DigitalVideoDisc disc){
         return this.title == disc.title && this.category == disc.category && this.director == disc.director && this.length == disc.length && this.cost == disc.cost;

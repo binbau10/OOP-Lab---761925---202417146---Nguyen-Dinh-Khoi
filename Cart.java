@@ -77,7 +77,7 @@ public class Cart {
         }
         return result;
     }
-    public void DisplayCarts(){
+    public void DisplayCart(){
         System.out.println("The cart includes:");
         for (int i = 0; i < qtyOrdered; i++){
             System.out.printf("%-10d %-20s %-20f%n", (int)(i + 1), itemsOrdered[i].getTitle(), itemsOrdered[i].getCost());

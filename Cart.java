@@ -15,7 +15,37 @@ public class Cart {
         qtyOrdered ++;
         System.out.println("The disc is successfully added.");
         if (qtyOrdered >= MAX_NUMBERS_ORDERED - 3){
-            System.out.println("The cart is almost full");
+            System.out.println("The cart is almost full!");
+        }
+        return;
+    }
+    public void addDigitalVideoDisc(DigitalVideoDisc disc1, DigitalVideoDisc disc2){
+        if (qtyOrdered + 2 > MAX_NUMBERS_ORDERED){
+            System.out.println("The cart is full!");
+            return;
+        }
+        itemsOrdered[qtyOrdered] = disc1;
+        qtyOrdered ++;
+        itemsOrdered[qtyOrdered] = disc2;
+        qtyOrdered ++;
+        System.out.println("The discs are successfully added.");
+        if (qtyOrdered >= MAX_NUMBERS_ORDERED - 3){
+            System.out.println("The cart is almost full!");
+        }
+        return;
+    }
+    public void addDigitalVideoDisc(DigitalVideoDisc... dvdList){
+        if (qtyOrdered + dvdList.length > MAX_NUMBERS_ORDERED){
+            System.out.println("The cart is full!");
+            return;
+        }
+        for (int i = 0; i < dvdList.length; i++){
+            itemsOrdered[qtyOrdered] = dvdList[i];
+            qtyOrdered ++;
+        }
+        System.out.println("The discs are successfully added.");
+        if (qtyOrdered >= MAX_NUMBERS_ORDERED - 3){
+            System.out.println("The cart is almost full!");
         }
         return;
     }
@@ -34,10 +64,10 @@ public class Cart {
             System.out.println("There is no DVDs in the cart matching the input.");
         }
         else if (removedDisc == 1){
-            System.out.println("All " + removedDisc + " disc was removed.");
+            System.out.println("All " + removedDisc + " disc is now removed.");
         }
         else{
-            System.out.println("All " + removedDisc + " discs were removed.");
+            System.out.println("All " + removedDisc + " discs are now removed.");
         }
     }
     public float totalCost(){

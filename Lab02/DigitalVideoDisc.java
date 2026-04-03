@@ -4,7 +4,7 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
     private float cost;
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
         swap(jungleDVD, cinderellaDVD);
@@ -16,9 +16,6 @@ public class DigitalVideoDisc {
     public void setTitle(String title){
         this.title = title;
     }
-    public String getTitle(){
-        return title;
-    }
     public static void swap(Object o1, Object o2){
         Object tmp = o1;
         o1 = o2;
@@ -28,6 +25,9 @@ public class DigitalVideoDisc {
         String oldTitle = dvd.getTitle();
         dvd.setTitle(title);
         dvd = new DigitalVideoDisc(oldTitle);
+    }*/
+    public String getTitle(){
+        return title;
     }
     public String getCategory(){
         return category;

@@ -23,13 +23,13 @@ public class DigitalVideoDisc {
         super();
         this.title = title;
     }
-    public DigitalVideoDisc(String category, String title, float cost){
+    public DigitalVideoDisc(String title, String category, float cost){
         super();
         this.category = category;
         this.title = title;
         this.cost = cost;
     }
-    public DigitalVideoDisc(String director, String category, String title, float cost){
+    public DigitalVideoDisc(String title, String category, String director, float cost){
         super();
         this.director = director;
         this.category = category;
@@ -41,7 +41,10 @@ public class DigitalVideoDisc {
         this.director = director;
         this.category = category;
         this.title = title;
-        this.length = length();
+        this.length = length;
         this.cost = cost;
+    }
+    public boolean equals(DigitalVideoDisc disc){
+        return this.title == disc.title && this.category == disc.category && this.director == disc.director && this.length == disc.length && this.cost == disc.cost;
     }
 }

@@ -1,3 +1,4 @@
+package AimsProject.hust.soict.globalict.aims;
 public class DigitalVideoDisc {
     private String title;
     private String category;

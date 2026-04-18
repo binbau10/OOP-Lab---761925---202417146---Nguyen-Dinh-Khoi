@@ -1,5 +1,5 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
-public class DigitalVideoDisc extends Disc{
+public class DigitalVideoDisc extends Disc implements Playable{
     /*public static void main(String args[]){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
@@ -45,5 +45,9 @@ public class DigitalVideoDisc extends Disc{
     }
     public boolean isMatch(String title){
         return this.getTitle() .contains(title);
+    }
+    public void play(){
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
     }
 }

@@ -73,4 +73,10 @@ public class DigitalVideoDisc {
     public boolean equals(DigitalVideoDisc disc){
         return this.title == disc.title && this.category == disc.category && this.director == disc.director && this.length == disc.length && this.cost == disc.cost;
     }
+    public String toString(){
+        return "DVD - " + this.title + " - " + this.category + " - " + this.director + " - " + this.length + " - " + this.cost + " $";
+    }
+    public boolean isMatch(String title){
+        return this.title.contains(title);
+    }
 }

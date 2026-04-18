@@ -1,6 +1,6 @@
-package AimsProject.hust.soict.globalict.aims;
-import AimsProject.hust.soict.globalict.aims.disc.DigitalVideoDisc;
-import AimsProject.hust.soict.globalict.aims.cart.Cart;
+package AimsProject.src.hust.soict.globalict.aims;
+import AimsProject.src.hust.soict.globalict.aims.disc.DigitalVideoDisc;
+import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 public class Aims{
     public static void main(String args[]){
         //

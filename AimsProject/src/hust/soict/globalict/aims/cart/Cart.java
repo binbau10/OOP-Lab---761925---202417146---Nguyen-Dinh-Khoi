@@ -1,5 +1,5 @@
-package AimsProject.hust.soict.globalict.aims.cart;
-import AimsProject.hust.soict.globalict.aims.disc.DigitalVideoDisc;
+package AimsProject.src.hust.soict.globalict.aims.cart;
+import AimsProject.src.hust.soict.globalict.aims.disc.DigitalVideoDisc;
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];

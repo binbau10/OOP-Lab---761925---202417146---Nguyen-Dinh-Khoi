@@ -35,4 +35,7 @@ public class Media {
     public boolean isMatch(String title){
         return this.getTitle() .contains(title);
     }
+    public boolean equals(Object object){
+        return this.title == ((Media)object).title;
+    }
 }

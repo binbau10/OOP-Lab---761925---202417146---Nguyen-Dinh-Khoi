@@ -17,4 +17,7 @@ public class Track implements Playable{
         System.out.println("Playing track: " + this.getTitle());
         System.out.println("Track length: " + this.getLength());
     }
+    public boolean equals(Object object){
+        return this.title == ((Track)object).title && this.length == ((Track)object).length;
+    }
 }

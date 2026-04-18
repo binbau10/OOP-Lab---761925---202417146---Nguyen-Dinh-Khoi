@@ -32,4 +32,7 @@ public class Media {
         this.cost = cost;
         nbMedia ++;
     }
+    public boolean isMatch(String title){
+        return this.getTitle() .contains(title);
+    }
 }

@@ -1,8 +1,5 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
-public class DigitalVideoDisc extends Media{
-    private static int nbDigitalVideoDiscs = 0;
-    private int length;
-    private String director;
+public class DigitalVideoDisc extends Disc{
     /*public static void main(String args[]){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
@@ -28,30 +25,23 @@ public class DigitalVideoDisc extends Media{
     //public void setTitle(String title){
     //    this.title = title;
     //}
-    public String getDirector(){
-        return director;
-    }
     public DigitalVideoDisc(String title){
-        super(nbDigitalVideoDiscs, title, "", 0.0f);
-        nbDigitalVideoDiscs ++;
+        super(title);
     }
     public DigitalVideoDisc(String title, String category, float cost){
-        super(nbDigitalVideoDiscs, title, category, cost);
-        nbDigitalVideoDiscs ++;
+        super(title, category, cost);
     }
     public DigitalVideoDisc(String title, String category, String director, float cost){
-        this(title, category, cost);
-        this.director = director;
+        super(title, category, director, cost);
     }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost){
-        this(title, category, director, cost);
-        this.length = length;
+        super(title, category, director, length, cost);
     }
     public boolean equals(DigitalVideoDisc disc){
-        return this.getTitle() == disc.getTitle()  && this.getCaterogy() == disc.getCaterogy() && this.director == disc.director && this.length == disc.length && this.getCost() == disc.getCost() ;
+        return this.getTitle() == disc.getTitle()  && this.getCaterogy() == disc.getCaterogy() && this.getDirector() == disc.getDirector() && this.getLength() == disc.getLength() && this.getCost() == disc.getCost() ;
     }
     public String toString(){
-        return "DVD - " + this.getTitle()  + " - " + this.getCaterogy() + " - " + this.director + " - " + this.length + " - " + this.getCost()  + " $";
+        return "DVD - " + this.getTitle()  + " - " + this.getCaterogy() + " - " + this.getDirector() + " - " + this.getLength() + " - " + this.getCost()  + " $";
     }
     public boolean isMatch(String title){
         return this.getTitle() .contains(title);

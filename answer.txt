@@ -14,3 +14,6 @@ Because the method only got the copied values (including references) of the obje
 After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
 
 The method got a copy of JungleDVD which points to the region with title = "Jungle". It used the copied value (reference) to call setTitle which changed the refered object's title into "Cinderella". The later assignment only changed the reference, and the object was unchanged, keeping the title "Cinderella".
+
+Which classes are aggregates of other classes?
+Cart and Store are aggregates of ArrayList.

@@ -8,14 +8,16 @@ public class Cart {
         super();
     }
     public void addMedia(Media media){
-        if (itemsOrdered.add(media)){
+        if (!itemsOrdered.contains(media)){
+            itemsOrdered.add(media);
             System.out.println("Media successfully added.");
             return;
         }
         System.out.println("Failed to add the media");
     }
     public void removeMedia(Media media){
-        if (itemsOrdered.remove(media)){
+        if (itemsOrdered.contains(media)){
+            itemsOrdered.remove(media);
             System.out.println("Media successfully removed.");
             return;
         }

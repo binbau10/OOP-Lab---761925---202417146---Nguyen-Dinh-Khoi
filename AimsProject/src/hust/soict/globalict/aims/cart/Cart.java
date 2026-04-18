@@ -77,4 +77,7 @@ public class Cart {
             System.out.println("No DVDs with the title found.");
         }
     }
+    public void sortItemsOrdered(){
+        java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
 }

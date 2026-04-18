@@ -1,5 +1,5 @@
 package AimsProject.src.hust.soict.globalict.aims.cart;
-import AimsProject.src.hust.soict.globalict.aims.disc.DigitalVideoDisc;
+import AimsProject.src.hust.soict.globalict.aims.media.DigitalVideoDisc;
 public class CartTest {
     public static void main(String args[]){
         Cart cart = new Cart();
@@ -10,7 +10,10 @@ public class CartTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         cart.addDigitalVideoDisc(dvd3);
         cart.print();
+        cart.searchDVD(0);
+        cart.searchDVD(1);
         cart.searchDVD(2);
+        cart.searchDVD(3);
         cart.searchDVD(4);
         cart.searchDVD("Ar");
         cart.searchDVD("zsw");

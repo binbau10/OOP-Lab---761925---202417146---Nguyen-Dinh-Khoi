@@ -1,5 +1,5 @@
 package AimsProject.src.hust.soict.globalict.aims.cart;
-import AimsProject.src.hust.soict.globalict.aims.disc.DigitalVideoDisc;
+import AimsProject.src.hust.soict.globalict.aims.media.DigitalVideoDisc;
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
@@ -97,11 +97,16 @@ public class Cart {
         System.out.println("***************************************************");
     }
     public void searchDVD(int id){
-        if (id <= 0 || id > qtyOrdered){
-            System.out.println("There is no DVD with such ID");
-            return;
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++){
+            if (itemsOrdered[i].getId() == id){
+                found = true;
+                System.out.println("DVD id " + (id) + ": " + itemsOrdered[i].toString());
+            }
         }
-        System.out.println("DVD " + id + ": " + (itemsOrdered[id].toString()));
+        if (!found){
+            System.out.println("No DVDs with the title found.");
+        }
     }
     public void searchDVD(String title){
         boolean found = false;

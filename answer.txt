@@ -14,6 +14,20 @@ Because the method only got the copied values (including references) of the obje
 After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
 
 The method got a copy of JungleDVD which points to the region with title = "Jungle". It used the copied value (reference) to call setTitle which changed the refered object's title into "Cinderella". The later assignment only changed the reference, and the object was unchanged, keeping the title "Cinderella".
-
+-----------------
 Which classes are aggregates of other classes?
 Cart and Store are aggregates of ArrayList.
+
+If the passing object is not an instance of Media, what happens?
+The casting from Object to Media would fails, causing an error.
+
+What class should implement the Comparable interface? 
+Media
+In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+compareTo() method take one Media object as argument and return an int determining the comparison result.
+
+Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+No. Each class can only have one method with the same signature, so there can only be one compareTo() method.
+
+Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+We would have to override the compareTo() method in the DigitalVideoDisc class, and the comparison only works with Collection os DigitalVideoDisc type.

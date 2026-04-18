@@ -2,6 +2,7 @@ package AimsProject.src.hust.soict.globalict.aims.cart;
 import AimsProject.src.hust.soict.globalict.aims.media.Book;
 import AimsProject.src.hust.soict.globalict.aims.media.CompactDisc;
 import AimsProject.src.hust.soict.globalict.aims.media.DigitalVideoDisc;
+
 public class CartTest {
     public static void main(String args[]){
         Cart cart = new Cart();
@@ -24,6 +25,7 @@ public class CartTest {
         cart.addMedia(cd1);
         Book book1 = new Book();
         cart.addMedia(book1);
+        cart.sortItemsOrdered();
         cart.print();
     }
 }

@@ -2,7 +2,6 @@ package AimsProject.src.hust.soict.globalict.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.IntSupplier;
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
     public Book(){

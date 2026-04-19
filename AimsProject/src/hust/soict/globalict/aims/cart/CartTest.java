@@ -13,19 +13,19 @@ public class CartTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
         cart.addMedia(dvd3);
         cart.print();
-        cart.searchDVD(0);
-        cart.searchDVD(1);
-        cart.searchDVD(2);
-        cart.searchDVD(3);
-        cart.searchDVD(4);
-        cart.searchDVD("Ar");
-        cart.searchDVD("zsw");
-        cart.searchDVD("tar");
+        cart.searchMedia(0);
+        cart.searchMedia(1);
+        cart.searchMedia(2);
+        cart.searchMedia(3);
+        cart.searchMedia(4);
+        cart.searchMedia("Ar");
+        cart.searchMedia("zsw");
+        cart.searchMedia("tar");
         CompactDisc cd1 = new CompactDisc("Me", "Not me", "Category", 45.2f);
         cart.addMedia(cd1);
         Book book1 = new Book();
         cart.addMedia(book1);
-        cart.sortItemsOrdered();
+        cart.sortItemsOrderedCostTitle();
         cart.print();
     }
 }

@@ -51,7 +51,7 @@ public class Cart {
         System.out.println("Total cost: " + this.totalCost());
         System.out.println("***************************************************");
     }
-    public void searchDVD(int id){
+    public void searchMedia(int id){
         boolean found = false;
         for (Media media : itemsOrdered){
             if (media.getId() == id){
@@ -63,21 +63,51 @@ public class Cart {
             System.out.println("No DVDs with the title found.");
         }
     }
-    public void searchDVD(String title){
-        boolean found = false;
-        int i = 0;
+    public Media searchMedia(String title){
         for (Media media : itemsOrdered){
-            if (media.isMatch(title)){
-                found = true;
-                System.out.println("DVD " + (i + 1) + ": " + media.toString());
-                i ++;
+            if (media.getTitle() == title){
+                System.out.println("Media found");
+                System.out.println(media.toString());
+                return media;
             }
         }
-        if (!found){
-            System.out.println("No DVDs with the title found.");
-        }
+        System.out.println("No DVDs with the title found.");
+        return null;
     }
-    public void sortItemsOrdered(){
+    public void print(int id){
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        int i = 0;
+        for (Media media : itemsOrdered){
+            if (media.getId() != id) continue;
+            System.out.print((i + 1) + ".");
+            System.out.println(media.toString());
+            i ++;
+        }
+        System.out.println("Total cost: " + this.totalCost());
+        System.out.println("***************************************************");
+    }
+    public void print(String title){
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        int i = 0;
+        for (Media media : itemsOrdered){
+            if (!(media.getTitle()).contains(title)) continue;
+            System.out.print((i + 1) + ".");
+            System.out.println(media.toString());
+            i ++;
+        }
+        System.out.println("Total cost: " + this.totalCost());
+        System.out.println("***************************************************");
+    }
+    public void sortItemsOrderedCostTitle(){
         java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+    }
+    public void sortItemsOrderedTitleCost(){
+        java.util.Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+    }
+    public void clearCart(){
+        itemsOrdered.clear();
+        System.out.println("The cart is cleared.");
     }
 }

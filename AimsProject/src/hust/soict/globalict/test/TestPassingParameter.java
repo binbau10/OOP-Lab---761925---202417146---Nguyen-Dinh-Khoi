@@ -1,6 +1,7 @@
 package AimsProject.src.hust.soict.globalict.test;
-import AimsProject.src.hust.soict.globalict.aims.media.DigitalVideoDisc;
+//import AimsProject.src.hust.soict.globalict.aims.media.DigitalVideoDisc;
 public class TestPassingParameter{
+    /*
     public static void main(String args[]){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
@@ -20,4 +21,5 @@ public class TestPassingParameter{
         dvd.setTitle(title);
         dvd = new DigitalVideoDisc(oldTitle);
     }
+    */
 }

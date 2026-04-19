@@ -1,6 +1,5 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
 import java.util.Comparator;
-import java.util.Collection;
 public class Media {
     private int id;
     private String title;

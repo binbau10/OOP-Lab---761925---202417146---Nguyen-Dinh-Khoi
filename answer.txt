@@ -31,3 +31,18 @@ No. Each class can only have one method with the same signature, so there can on
 
 Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
 We would have to override the compareTo() method in the DigitalVideoDisc class, and the comparison only works with Collection os DigitalVideoDisc type.
+
+Lab04
+
+Programming with AWT and Swing is quite similar (similar elements including container/components, and
+event-handling). However, there are some differences that you need to note:
+o Compare the top-level containers in Swing and AWT
+o Compare the class name of components in AWT and the corresponding class’s name in Swing
+o Compare the event-handling of Swing and AWT applications
+The resulting appearances of the applications developed using Swing and AWT might be different as well.
+Make comparisons.
+
+The top-level containers in AWT is Frame, while the top-level containers in Swing is JFrame.
+The class name of components in AWT is TextField, Label, ... while the corresponding name of components in Swing have an extra prefix J before the original name.
+The event-handling of Swing and AWT applications both use AWT's event-handling classes
+The text in Swing application is bolder and the boxes is more visible.

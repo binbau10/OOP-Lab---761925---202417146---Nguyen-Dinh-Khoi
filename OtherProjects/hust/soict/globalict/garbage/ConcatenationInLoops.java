@@ -17,5 +17,6 @@ public class ConcatenationInLoops {
         }
         s = sb.toString();
         System.out.println(System.currentTimeMillis() - start);
+        System.out.println(s);
     }
 }

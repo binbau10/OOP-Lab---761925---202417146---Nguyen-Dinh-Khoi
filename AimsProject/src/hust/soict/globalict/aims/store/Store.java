@@ -6,6 +6,9 @@ public class Store {
     public Store(){
         super();
     }
+    public ArrayList<Media> getItemsInStore(){
+        return itemsInStore;
+    }
     public boolean addMedia(Media media){
         if (!itemsInStore.contains(media)){
             itemsInStore.add(media);

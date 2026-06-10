@@ -15,7 +15,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="100.0">
          <children>
-            <Label text="AIMS">
+            <Label text="AIMS" textFill="#004cff">
                <font>
                   <Font size="50.0" />
                </font>

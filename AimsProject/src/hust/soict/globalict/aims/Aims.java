@@ -7,20 +7,30 @@ import AimsProject.src.hust.soict.globalict.aims.media.Playable;
 
 import java.util.Scanner;
 
+import javax.naming.LimitExceededException;
+
 public class Aims{
     private static Scanner scanner = new Scanner(System.in);
     private static Store store = new Store();
     private static Cart cart = new Cart();
     public static void main(String args[]){
         //
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
-        store.addMedia(dvd1);
-        store.addMedia(dvd2);
-        store.addMedia(dvd3);
-        showMenu();
-        scanner.close();
+        try{
+            DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
+            DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
+            DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+            store.addMedia(dvd1);
+            store.addMedia(dvd2);
+            store.addMedia(dvd3);
+            showMenu();
+            
+        }
+        catch(LimitExceededException e){
+            e.printStackTrace();
+        }
+        finally{
+            scanner.close();
+        }
     }
     public static void showMenu() {
         System.out.println("AIMS: ");
@@ -131,13 +141,21 @@ public class Aims{
         String category = scanner.nextLine().replaceAll("\\r\\n|\\r|\\n", "");
         System.out.println("Enter cost:");
         float cost = scanner.nextFloat();
-        Media media = new Media(title, category, cost);
-        System.out.println("Title: " + title + "\nCategory: " + category + "\nCost: " + cost + "\nProceed?\n1. Yes\n0. No");
-        int choice = scanner.nextInt();
-        scanner.nextLine().replaceAll("\\r\\n|\\r|\\n", "");
-        if (choice == 0) return;
-        if (choice == 1){
-            store.addMedia(media);
+        Media media = new Media();
+        try{
+            media = new Media(title, category, cost);
+        }
+        catch (LimitExceededException e){
+            e.printStackTrace();
+        }
+        finally{
+            System.out.println("Title: " + title + "\nCategory: " + category + "\nCost: " + cost + "\nProceed?\n1. Yes\n0. No");
+            int choice = scanner.nextInt();
+            scanner.nextLine().replaceAll("\\r\\n|\\r|\\n", "");
+            if (choice == 0) return;
+            if (choice == 1){
+                store.addMedia(media);
+            }
         }
         return;
     }
@@ -196,7 +214,12 @@ public class Aims{
         }
         if (choice == 1)
         {
-            cart.addMedia(media);
+            try{
+                cart.addMedia(media);
+            }
+            catch (LimitExceededException e){
+                e.printStackTrace();
+            }
             showMenu();
             return;
         }

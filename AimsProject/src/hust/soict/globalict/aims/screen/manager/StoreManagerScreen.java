@@ -13,10 +13,15 @@ public class StoreManagerScreen extends JFrame {
     private  Store store;
     public static void main(String args[]){
         Store tempStore=  new Store();
-        tempStore.addMedia(new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f));
-        tempStore.addMedia(new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f));
-        tempStore.addMedia(new DigitalVideoDisc("Aladin", "Animation", 18.99f));
-        new StoreManagerScreen(tempStore);
+        try{
+            tempStore.addMedia(new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f));
+            tempStore.addMedia(new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f));
+            tempStore.addMedia(new DigitalVideoDisc("Aladin", "Animation", 18.99f));
+            new StoreManagerScreen(tempStore);
+        }
+        catch (Exception err){
+            err.printStackTrace();
+        }
     }
     public StoreManagerScreen(Store store){
         this.store = store;

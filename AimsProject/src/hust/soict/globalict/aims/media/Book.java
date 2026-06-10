@@ -2,12 +2,15 @@ package AimsProject.src.hust.soict.globalict.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+
+import javax.naming.LimitExceededException;
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
     public Book(){
         super();
     }
-    public Book(String title, String category, float cost){
+    public Book(String title, String category, float cost) throws LimitExceededException{
         super(title, category, cost);
     }
     public void addAuthor(String authorName){
@@ -19,13 +22,14 @@ public class Book extends Media {
             System.out.println("Author " + authorName + " is already listed");
         }
     }
-    public void removeAuthor(String authorName){
+    public void removeAuthor(String authorName) throws NoSuchElementException{
         if (authors.contains(authorName)){
             authors.remove(authorName);
             System.out.println("Author " + authorName + " removed.");
         }
         else{
             System.out.println("Author " + authorName + " is not listed");
+            throw new NoSuchElementException();
         }
     }
 }

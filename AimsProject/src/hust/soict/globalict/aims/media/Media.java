@@ -1,5 +1,7 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
 import java.util.Comparator;
+
+import javax.naming.LimitExceededException;
 public class Media {
     private int id;
     private String title;
@@ -27,7 +29,10 @@ public class Media {
         this.cost = 0.0f;
         nbMedia ++;
     }
-    public Media(String title, String category, float cost){
+    public Media(String title, String category, float cost) throws LimitExceededException{
+        if (cost < 0){
+            throw new LimitExceededException("ERROR: The cost of a media must be non-negative");
+        }
         this.id = nbMedia;
         this.title = title;
         this.category = category;

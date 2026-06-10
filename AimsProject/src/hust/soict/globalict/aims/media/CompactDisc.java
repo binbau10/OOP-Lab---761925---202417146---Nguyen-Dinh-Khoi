@@ -2,16 +2,18 @@ package AimsProject.src.hust.soict.globalict.aims.media;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.naming.LimitExceededException;
 public class CompactDisc extends Disc implements Playable{
     private String artist;
     private List<Track> tracks = new ArrayList<Track> ();
     public String getArtist() {
         return artist;
     }
-    public CompactDisc(String title, String category, float cost){
+    public CompactDisc(String title, String category, float cost) throws LimitExceededException{
         super(title, category, cost);
     }
-    public CompactDisc(String artist, String title, String category, float cost){
+    public CompactDisc(String artist, String title, String category, float cost) throws LimitExceededException{
         super(title, category, cost);
         this.artist = artist;
     }

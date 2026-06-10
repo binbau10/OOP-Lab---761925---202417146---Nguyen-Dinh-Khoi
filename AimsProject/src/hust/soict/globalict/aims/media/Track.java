@@ -1,5 +1,7 @@
 package AimsProject.src.hust.soict.globalict.aims.media;
 
+import javax.naming.LimitExceededException;
+
 public class Track implements Playable{
     private String title;
     private int length;
@@ -9,7 +11,10 @@ public class Track implements Playable{
     public int getLength() {
         return length;
     }
-    public Track(String title, int length) {
+    public Track(String title, int length) throws LimitExceededException{
+        if (length <= 0){
+            throw new LimitExceededException("ERROR: Length must be greater than 0");
+        }
         this.title = title;
         this.length = length;
     }

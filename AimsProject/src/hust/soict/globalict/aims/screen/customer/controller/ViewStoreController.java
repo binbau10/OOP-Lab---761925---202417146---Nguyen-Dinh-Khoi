@@ -60,7 +60,7 @@ public class ViewStoreController {
                 AnchorPane anchorPane = new AnchorPane();
                 anchorPane = fxmlloader.load();
                 itemController.setData(store.getItemsInStore().get(i));
-
+                itemController.setCart(cart);
                 if (column == 3){
                     column = 0;
                     row ++;

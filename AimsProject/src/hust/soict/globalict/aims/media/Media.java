@@ -3,7 +3,7 @@ import java.util.Comparator;
 public class Media {
     private int id;
     private String title;
-    private String caterogy;
+    private String category;
     private float cost;
     private static int nbMedia = 0;
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
@@ -14,8 +14,8 @@ public class Media {
     public String getTitle() {
         return title;
     }
-    public String getCaterogy() {
-        return caterogy;
+    public String getCategory() {
+        return category;
     }
     public float getCost() {
         return cost;
@@ -23,14 +23,14 @@ public class Media {
     public Media(){
         this.id = nbMedia;
         this.title = "";
-        this.caterogy = "";
+        this.category = "";
         this.cost = 0.0f;
         nbMedia ++;
     }
     public Media(String title, String category, float cost){
         this.id = nbMedia;
         this.title = title;
-        this.caterogy = category;
+        this.category = category;
         this.cost = cost;
         nbMedia ++;
     }

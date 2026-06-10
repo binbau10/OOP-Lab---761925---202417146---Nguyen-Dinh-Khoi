@@ -38,10 +38,10 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super(title, category, director, length, cost);
     }
     public boolean equals(DigitalVideoDisc disc){
-        return this.getTitle() == disc.getTitle()  && this.getCaterogy() == disc.getCaterogy() && this.getDirector() == disc.getDirector() && this.getLength() == disc.getLength() && this.getCost() == disc.getCost() ;
+        return this.getTitle() == disc.getTitle()  && this.getCategory() == disc.getCategory() && this.getDirector() == disc.getDirector() && this.getLength() == disc.getLength() && this.getCost() == disc.getCost() ;
     }
     public String toString(){
-        return "DVD - " + this.getTitle()  + " - " + this.getCaterogy() + " - " + this.getDirector() + " - " + this.getLength() + " - " + this.getCost()  + " $";
+        return "DVD - " + this.getTitle()  + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + " - " + this.getCost()  + " $";
     }
 
     public void play(){

@@ -8,17 +8,20 @@ import AimsProject.src.hust.soict.globalict.aims.media.Playable;
 import AimsProject.src.hust.soict.globalict.aims.store.Store;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -53,7 +56,12 @@ public class CartController {
 
     @FXML
     void btnPlayPressed(ActionEvent event) {
-
+        Media media = tblMedia.getSelectionModel().getSelectedItem();
+        try {
+            ((Playable) media).play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -78,7 +86,17 @@ public class CartController {
             e.printStackTrace();
         }
     }
+    @FXML
+    void btnPlaceOrderPressed(ActionEvent event) {
+        cart.clearCart();
 
+        Alert alert = new Alert(
+            AlertType.INFORMATION,
+            "Order placed successfully!"
+        );
+    
+        alert.showAndWait();
+    }
     private Cart cart;
     private Store store;
     public CartController(Cart cart){
@@ -97,7 +115,11 @@ public class CartController {
         if (cart.getItemsOrdered() != null){
             tblMedia.setItems(cart.getItemsOrdered());
         }
-
+        costLabel.setText(String.format("%.2f $", cart.totalCost()));
+        cart.getItemsOrdered().addListener((ListChangeListener<Media>) change -> {
+            costLabel.setText(String.format("%.2f $", cart.totalCost()));
+            }
+        );
         btnPlay.setVisible(false);
         btnRemove.setVisible(false);
 

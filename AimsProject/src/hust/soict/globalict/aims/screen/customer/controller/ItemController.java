@@ -1,5 +1,6 @@
 package AimsProject.src.hust.soict.globalict.aims.screen.customer.controller;
 
+import AimsProject.src.hust.soict.globalict.aims.cart.Cart;
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import AimsProject.src.hust.soict.globalict.aims.media.Playable;
 import javafx.event.ActionEvent;
@@ -25,15 +26,20 @@ public class ItemController {
 
     @FXML
     void btnAddToCartClicked(ActionEvent event) {
-
+        cart.addMedia(media);
     }
 
     @FXML
     void btnPlayClicked(ActionEvent event) {
-
+        try {
+            ((Playable) media).play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private Media media;
+    private Cart cart;
     public void setData(Media media){
         this.media = media;
         lblTitle.setText(media.getTitle());
@@ -45,5 +51,8 @@ public class ItemController {
             btnPlay.setVisible(false);
             HBox.setMargin(btnAddToCart, new Insets(0, 0, 0, 60));
         }
+    }
+    public void setCart(Cart cart){
+        this.cart = cart;
     }
 }

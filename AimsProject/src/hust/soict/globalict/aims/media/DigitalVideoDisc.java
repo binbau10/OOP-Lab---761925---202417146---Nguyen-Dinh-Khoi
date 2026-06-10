@@ -2,6 +2,8 @@ package AimsProject.src.hust.soict.globalict.aims.media;
 
 import javax.naming.LimitExceededException;
 
+import AimsProject.src.hust.soict.globalict.aims.exception.PlayerException;
+
 public class DigitalVideoDisc extends Disc implements Playable{
     /*public static void main(String args[]){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
@@ -40,14 +42,17 @@ public class DigitalVideoDisc extends Disc implements Playable{
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) throws LimitExceededException{
         super(title, category, director, length, cost);
     }
-    public boolean equals(DigitalVideoDisc disc){
+    public boolean equals(DigitalVideoDisc disc) throws NullPointerException, ClassCastException{
         return this.getTitle() == disc.getTitle()  && this.getCategory() == disc.getCategory() && this.getDirector() == disc.getDirector() && this.getLength() == disc.getLength() && this.getCost() == disc.getCost() ;
     }
     public String toString(){
         return "DVD - " + this.getTitle()  + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + " - " + this.getCost()  + " $";
     }
 
-    public void play(){
+    public void play() throws PlayerException{
+        if(this.getLength() <= 0){
+            throw new PlayerException("Error: DVD length is non-positive!");
+        }
         System.out.println("Playing DVD: " + this.getTitle());
         System.out.println("DVD length: " + this.getLength());
     }

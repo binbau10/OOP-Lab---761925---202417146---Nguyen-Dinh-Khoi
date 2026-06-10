@@ -42,7 +42,10 @@ public class Media {
     public boolean isMatch(String title){
         return this.getTitle() .contains(title);
     }
-    public boolean equals(Object object){
+    public boolean equals(Object object) throws NullPointerException, ClassCastException{
         return this.title == ((Media)object).title;
+    }
+    public int compareTo(Object object) throws NullPointerException, ClassCastException{
+        return (this.title).compareTo(((Media)object).title);
     }
 }

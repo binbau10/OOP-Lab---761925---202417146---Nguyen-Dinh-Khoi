@@ -191,7 +191,12 @@ public class Aims{
     }
     public static void playMedia(Media media){
         if (media instanceof Playable){
-            ((Playable)media).play();
+            try{
+                ((Playable)media).play();
+            }
+            catch (Exception err){
+                err.printStackTrace();
+            }
         }
         else{
             System.out.println("No media with the name found");

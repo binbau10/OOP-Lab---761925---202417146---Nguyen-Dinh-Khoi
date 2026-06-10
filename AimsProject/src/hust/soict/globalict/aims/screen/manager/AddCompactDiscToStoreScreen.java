@@ -40,12 +40,18 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
             String category = categoryField.getText();
             float cost = Float.parseFloat(costField.getText());
 
-            CompactDisc cd = new CompactDisc(title, category, cost);
+            try{
+                CompactDisc cd = new CompactDisc(title, category, cost);
 
-            store.addMedia(cd);
+                store.addMedia(cd);
+    
+                JOptionPane.showMessageDialog(null,
+                        "CD added successfully");
+            }
+            catch(Exception err){
+                err.printStackTrace();
+            }
 
-            JOptionPane.showMessageDialog(null,
-                    "CD added successfully");
         });
 
         return center;

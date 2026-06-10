@@ -39,13 +39,18 @@ public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
             String title = titleField.getText();
             String category = categoryField.getText();
             float cost = Float.parseFloat(costField.getText());
+            try{
+                DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, cost);
 
-            DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, cost);
+                store.addMedia(dvd);
+    
+                JOptionPane.showMessageDialog(null,
+                        "DVD added successfully");
+            }
+            catch (Exception err){
+                err.printStackTrace();
+            }
 
-            store.addMedia(dvd);
-
-            JOptionPane.showMessageDialog(null,
-                    "DVD added successfully");
         });
 
         return center;

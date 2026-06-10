@@ -25,7 +25,12 @@ public class MediaStore extends JPanel{
             JButton playButton = new JButton("Play");
 
             playButton.addActionListener(e -> {
-                ((Playable) this.media).play();
+                try{
+                    ((Playable)media).play();
+                }
+                catch (Exception err){
+                    err.printStackTrace();
+                }
                 JOptionPane.showMessageDialog(null, "Playing: " + this.media.getTitle());
             });
 

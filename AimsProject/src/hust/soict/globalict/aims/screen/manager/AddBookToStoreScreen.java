@@ -39,13 +39,18 @@ public class AddBookToStoreScreen extends AddItemToStoreScreen {
             String title = titleField.getText();
             String category = categoryField.getText();
             float cost = Float.parseFloat(costField.getText());
+            try{
+                Book book = new Book(title, category, cost);
 
-            Book book = new Book(title, category, cost);
+                store.addMedia(book);
+    
+                JOptionPane.showMessageDialog(null,
+                        "Book added successfully");
+            }
+            catch(Exception err){
+                err.printStackTrace();
+            }
 
-            store.addMedia(book);
-
-            JOptionPane.showMessageDialog(null,
-                    "Book added successfully");
         });
 
         return center;

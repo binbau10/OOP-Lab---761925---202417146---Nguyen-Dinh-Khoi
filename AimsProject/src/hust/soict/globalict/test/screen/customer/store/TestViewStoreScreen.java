@@ -29,10 +29,15 @@ public class TestViewStoreScreen extends Application{
 
     public static void main(String[] args){
         store = new Store();
-        store.addMedia(new Book("Book1", "Category1", 8.0f));
-        store.addMedia(new DigitalVideoDisc("DVD2", "Category2", "Director2", 10, 4.4f));
-        store.addMedia(new Book("Book3", "Category3", 11.2f));
-        store.addMedia(new DigitalVideoDisc("DVD4", "Category4", "Director4", 30, 21.7f));
+        try{
+            store.addMedia(new Book("Book1", "Category1", 8.0f));
+            store.addMedia(new DigitalVideoDisc("DVD2", "Category2", "Director2", 10, 4.4f));
+            store.addMedia(new Book("Book3", "Category3", 11.2f));
+            store.addMedia(new DigitalVideoDisc("DVD4", "Category4", "Director4", 30, 21.7f));
+        }
+        catch (Exception err){
+            err.printStackTrace();
+        }
         cart = new Cart();
         launch(args);
     }

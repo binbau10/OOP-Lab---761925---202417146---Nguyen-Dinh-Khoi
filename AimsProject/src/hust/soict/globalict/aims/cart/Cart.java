@@ -1,4 +1,6 @@
 package AimsProject.src.hust.soict.globalict.aims.cart;
+import javax.naming.LimitExceededException;
+
 import AimsProject.src.hust.soict.globalict.aims.media.Media;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,7 +13,10 @@ public class Cart {
     public ObservableList<Media> getItemsOrdered() {
         return itemsOrdered;
     }
-    public void addMedia(Media media){
+    public void addMedia(Media media) throws LimitExceededException{
+        if (itemsOrdered.size() >= MAX_NUMBERS_ORDERED){
+            throw new LimitExceededException("ERROR: The number of media has reached its limit");
+        }
         if (!itemsOrdered.contains(media)){
             itemsOrdered.add(media);
             System.out.println("Media successfully added.");
